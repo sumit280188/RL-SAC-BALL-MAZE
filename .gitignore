@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+
+# training artifacts
+checkpoints/
+runs/
+logs/
+sac-*.out
+
+# envs / editors
+.venv/
+venvs/
+.idea/
+.vscode/
