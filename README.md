@@ -70,7 +70,7 @@ fine on CPU-only machines.
 ## Training
 
 ```bash
-python main.py
+python3 main.py
 ```
 
 Picks GPU automatically if one is visible, otherwise CPU. Defaults live at the
@@ -96,18 +96,6 @@ warm-up layout. Swap `maze_map` for a real U-maze once that solves.
 Checkpoints are written to `checkpoints/` every 10 episodes; TensorBoard logs
 go to `runs/`.
 
-### On an HPC cluster (SLURM)
-
-```bash
-sbatch run_cpu.sh
-squeue --me
-tail -f sac-<jobid>.out
-```
-
-Edit the `PY=` line in [`run_cpu.sh`](run_cpu.sh) to point at your environment's
-interpreter — conda is not on `PATH` in a batch shell, so the script calls the
-interpreter directly instead of activating.
-
 ## Watching the results
 
 ```bash
@@ -121,7 +109,7 @@ policy loss falls for the same reason.
 To watch the trained agent:
 
 ```bash
-python evaluate.py
+python3 evaluate.py
 ```
 
 Runs 5 deterministic episodes with `render_mode="human"` and prints per-episode
